@@ -780,7 +780,7 @@ WDL_DLGRET IPlugAPPHost::MainDlgProc(HWND hwndDlg, UINT uMsg, WPARAM wParam, LPA
         RECT r;
         GetClientRect(hwndDlg, &r);
         float scale = 1.f;
-        #ifdef OS_WIN 
+        #if 0 // TODO(Johan): I disabled this to fix my resizing issues
         scale = GetScaleForHWND(hwndDlg);
         #endif
         pPlug->OnParentWindowResize(static_cast<int>(r.right / scale), static_cast<int>(r.bottom / scale));
